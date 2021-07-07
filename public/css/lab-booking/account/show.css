@@ -1,0 +1,211 @@
+.account-head {
+  margin-top: 50px;
+  height: 45px;
+  padding-left: 10px;
+  background-color: #bdbdbd;
+  border: 1px solid #000;
+}
+
+.account-header {
+  font-size: 1.9rem;
+  color: #000;
+}
+
+.account-info {
+  border: 1px solid #000;
+  padding: 30px 20px 20px 10px;
+}
+
+html,
+body {
+  font-size: 15px;
+  height: 100%;
+}
+
+/*a{
+	color: #000;
+}*/
+
+a:hover {
+  text-decoration: none;
+}
+
+.loader {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  background-color: #FFF;
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: #000;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.filter-pop-up {
+  position: absolute;
+  z-index: 3;
+  height: 450px;
+  width: 400px;
+  padding: 5px 0px 0px 20px;
+  margin-left: 30%;
+  background-color: #FFF;
+  float: right;
+  display: none;
+}
+
+.pop-up-close {
+  width: 30px;
+  border-radius: 50px;
+  border: 2px solid red;
+  background-color: #FFF;
+  float: right;
+  margin: -11px -10px 0px 0px;
+}
+
+.pop-up-close:hover {
+  background-color: whitesmoke;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.tab-1 {
+  width: 20%;
+  height: 670px;
+  /*height: 650px;*/
+  background: #2196F3;
+  color: #fff;
+  float: left;
+  margin: 0;
+  border-radius: 3px;
+  padding: 105px 20px 0px 20px;
+  display: none;
+}
+
+.welcome-panel {
+  padding: 20px 10px 30px 20px;
+  /*border: 1px solid #FFF;*/
+}
+
+.menu-panel {
+  padding: 20px 20px 10px 20px;
+  height: 200px;
+  /*border: 1px solid #FFF;*/
+}
+
+.admin-panel {
+  padding: 20px 20px 0px 20px;
+}
+
+.admin-panel a,
+.welcome-panel a,
+.menu-panel a {
+  color: #000;
+}
+
+.admin-panel a:hover,
+.welcome-panel a:hover,
+.menu-panel a:hover {
+  text-decoration: underline;
+}
+
+.name {
+  font-family: "Courgette", cursive;
+  font-size: 3rem;
+}
+
+.side-bar-menu {
+  position: absolute;
+  z-index: 2;
+  width: 250px;
+  height: 100%;
+  /* height: 650px; */
+  background: #CFCFCF;
+  margin: 0;
+  border-radius: 3px;
+  padding: 105px 20px 0px 20px;
+  display: none;
+}
+
+.tab-2 {
+  width: 100%;
+  height: 100%;
+  /*height: 670px;*/
+  background: #f8f8f8;
+  float: right;
+  /*overflow: scroll;*/
+}
+
+.nav {
+  display: block;
+  height: 60px;
+  background-color: #FFF;
+  box-shadow: 0px 11px 5px 0px #C8C8C8;
+  padding: 5px 0px 0px 15px;
+}
+
+.material-icons {
+  margin-top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.material-icons:hover {
+  opacity: 0.8;
+}
+
+.logo {
+  font-family: "Orbitron", sans-serif;
+  color: #2196F3 !important;
+  font-size: 1.9rem;
+  margin-left: 13px;
+  margin-top: -8px;
+}
+
+.profile {
+  float: right;
+  margin-right: 10px;
+}
+
+.full-name {
+  margin: 15px 0px 0px 10px;
+  float: right;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.profile-pic {
+  margin: 3px 0px 0px 10px;
+  float: right;
+  height: 45px;
+  width: 45px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.profile-options {
+  font-weight: bolder;
+  transform: rotate(90deg);
+}
+
+.row-date {
+  padding-top: 20px;
+}
+
+.date {
+  font-weight: normal;
+  font-size: 1.5rem;
+  float: right;
+  margin-bottom: 10px;
+}
+

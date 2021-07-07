@@ -1,0 +1,70 @@
+.timetable-pop-up {
+  position: absolute;
+  z-index: 3;
+  border-radius: 5px;
+  width: 70%;
+  height: 550px;
+  transform: translate(100px, 100px);
+  background-color: #FFF;
+  display: none;
+  overflow: scroll;
+}
+
+.timetable-pop-up .container {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.show-timetable {
+  cursor: pointer;
+}
+
+.show-timetable:hover {
+  text-decoration: underline;
+}
+
+#close-btn {
+  margin-right: 10px;
+  margin-top: 10px;
+  float: right;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.container {
+  z-index: 1;
+}
+
+#unsuccessful {
+  font-size: 1em;
+  color: #C94442;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+#express {
+  font-family: Orbitron;
+  /*color: #8F0047;*/
+  color: #E31B90;
+}
+
+#avail,
+#notAvail {
+  display: none;
+}
+

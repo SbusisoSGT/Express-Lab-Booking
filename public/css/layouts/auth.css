@@ -1,0 +1,131 @@
+.container-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-div .background-image {
+  width: 60%;
+  height: 100%;
+}
+
+.container-div .background-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.container-div .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 100vh;
+}
+
+.container-div .form-container .logo {
+  padding-top: 1rem;
+  height: 16.7rem;
+}
+
+.container-div .form-container .logo img {
+  height: 13.3rem;
+  width: 20rem;
+}
+
+.container-div .form-container .form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-div .form-container .form form .form-group svg {
+  margin-top: 0.2rem;
+  font-size: 1.8rem;
+}
+
+.container-div .form-container .form form .form-group .input {
+  border-radius: 0.3rem;
+  width: 24vmax;
+  border: 1px solid #c8c8c8;
+  margin: 0px 0px 1.3rem 0.2rem;
+  padding-left: 0.6rem;
+  height: 2.2rem;
+}
+
+.container-div .form-container .form form .submit {
+  width: 28vmax;
+  outline: none;
+  font-size: 1.02rem;
+  font-weight: bolder;
+  color: #FFF;
+  background: #F36D2E;
+  border-radius: 0.3rem;
+  border: 1px solid #DEDEDE;
+  border-bottom: 3px solid #F36D2E;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.container-div .form-container .form form .submit:hover {
+  background: #FFF;
+  color: #000;
+  border: 1px solid #F36D2E;
+  border-bottom: 3px solid #F36D2E;
+}
+
+.container-div .form-container .form form .form-links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 28vmax;
+}
+
+.container-div .form-container .form form .form-links-container .register,
+.container-div .form-container .form form .form-links-container .forgot {
+  color: #000;
+}
+
+.container-div .form-container .form form .form-links-container .register:hover,
+.container-div .form-container .form form .form-links-container .forgot:hover {
+  text-decoration: underline;
+}
+
+.container-div .form-container .form h4 {
+  text-align: center;
+}
+
+@media only screen and (max-width: 776px) {
+  .background-image {
+    display: none;
+  }
+
+  .form-container {
+    width: 100% !important;
+    height: 100vh;
+  }
+
+  .input {
+    width: 45vw !important;
+  }
+
+  .submit,
+  .form-links-container {
+    width: 50vw !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .input {
+    width: 65vw !important;
+  }
+
+  .submit,
+  .form-links-container {
+    width: 70vw !important;
+  }
+}
+

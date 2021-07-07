@@ -1,0 +1,59 @@
+/*          Main Page Styling      */
+
+/*          Font imports            */
+@import url('../inc/_fonts.scss');
+
+/*          Root Styling            */
+@import url('../inc/_root.scss');
+
+
+.section-header{
+    font-size: 2.4rem;
+    font-weight: 250;
+    color: var(--dark-shade);
+}
+
+.lg-btn{
+    background-color: var(--dark-shade);
+    color: var(--bg-color);
+    border: none;
+    transition: .3s ease;
+}
+
+.lg-btn:hover{
+    background-color: #332321;
+}
+
+.footer{
+    // background-color: var(--dark-shade);
+    // color: var(--bg-color);
+}
+
+.copyright {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-top: 1.9rem;
+    align-self: center;
+
+    p{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 1rem;
+
+        #ht {
+            color: #5ca7f7 !important;
+        }
+
+        .copyright-dot {
+            display: none;
+        }
+    
+        i {
+            color: #f0f;
+            font-size: 1rem;
+        }
+    }
+} 

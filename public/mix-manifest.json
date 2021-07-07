@@ -1,0 +1,9 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/layouts/main.css": "/css/layouts/main.css",
+    "/css/layouts/auth.css": "/css/layouts/auth.css",
+    "/css/lab-booking/account/edit.css": "/css/lab-booking/account/edit.css",
+    "/css/lab-booking/account/show.css": "/css/lab-booking/account/show.css",
+    "/css/lab-booking/create.css": "/css/lab-booking/create.css",
+    "/css/lab-booking/dashboard.css": "/css/lab-booking/dashboard.css"
+}

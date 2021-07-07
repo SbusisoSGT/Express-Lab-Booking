@@ -1,0 +1,139 @@
+.container-div{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+
+	.background-image{
+		width: 60%;
+		height: 100%;
+
+		img{
+			object-fit: cover;
+			height: 100vh;
+			width: 100%;
+		}
+	}
+
+	.form-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		width: 40%;
+		height: 100vh;
+
+		.logo{
+			padding-top: 1rem;
+			height: 16.7rem;
+	
+			img{
+				height: 13.3rem;
+				width: 20rem;
+			}
+		}
+
+		.form{
+	
+			form{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.form-group{
+					svg{
+						margin-top: .2rem;
+						font-size: 1.8rem;
+					}
+
+					.input{
+						border-radius: .3rem;
+						width: 24vmax;
+						border: 1px solid #c8c8c8;
+						margin: 0px 0px 1.3rem .2rem;
+						padding-left: .6rem;
+						height: 2.2rem;
+					}
+				}
+
+				.submit{
+					width: 28vmax;
+					outline: none;
+					font-size: 1.02rem;
+					font-weight: bolder;
+					color: #FFF;
+					background: #F36D2E;
+					border-radius: .3rem;
+					border: 1px solid #DEDEDE;
+					border-bottom: 3px solid #F36D2E;
+					height: 2.2rem;
+					cursor: pointer;
+
+					&:hover{
+						background: #FFF;
+						color: #000;
+						border: 1px solid #F36D2E;
+						border-bottom: 3px solid #F36D2E;	
+					}
+				}
+
+				.form-links-container{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width: 28vmax;
+
+					.register, .forgot{
+						color: #000;
+
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+
+			h4{
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 992px){
+
+
+}
+
+@media only screen and (max-width: 776px){
+    .background-image{
+		display: none;
+    }
+
+    .form-container{
+		width: 100% !important;
+		height: 100vh;
+	}
+
+	.input{
+		width: 45vw !important;
+	}
+
+	.submit, .form-links-container{
+		width: 50vw !important;
+	}
+}
+
+
+@media only screen and (max-width: 576px){
+	.input{
+		width: 65vw !important;
+	}
+
+	.submit, .form-links-container{
+		width: 70vw !important;
+	}
+
+}
+
