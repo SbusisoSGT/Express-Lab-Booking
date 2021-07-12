@@ -44,14 +44,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Courgette&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="{{ asset('css/lab-booking/dashboard.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/layouts/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
     @yield('page-includes-styles')
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="https://kit.fontawesome.com/3ef12e339b.js"></script>
 </head>
 <body onload="preloaderDisp()">
-    <div class="overlay">
+    <div class="overlay" onclick="hideSideMenu()">
     </div>
     <div class="preloader">
     </div>
@@ -61,8 +61,8 @@
     <main class="main-container">
         @yield('main-content')
     </main>
-    {{-- <script src="{{asset('js/layouts/main.js')}}"></script>
     @yield('page-includes-scripts')
+    {{-- <script src="{{asset('js/layouts/main.js')}}"></script>
     @yield('js-code') --}}
 </body>
 </html>

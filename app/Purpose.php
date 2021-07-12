@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Building extends Model
+class Purpose extends Model
 {
+
     public $timestamps = false;
 
     protected $fillable = ['name'];
 
     /**
-     * Get the labs for the building.
+     * Get the Labs that have this purpose
      */
-
     public function labs()
     {
-        return $this->hasMany('App\Lab');
+        return $this->belongsToMany('App\Lab');
     }
 }

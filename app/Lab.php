@@ -9,7 +9,7 @@ class Lab extends Model
     protected $table = 'labs';
 
     protected $fillable = [
-        'lab_name', 'number_of_computers', 'purpose', 'building_id',
+        'name', 'number_of_computers', 'purpose', 'building_id',
     ];
 
     public $timestamps = false;
@@ -27,5 +27,13 @@ class Lab extends Model
     public function bookings()
     {
         return $this->hasMany('App\Booking');
+    }
+
+    /**
+     * Get the uses of this lab
+     */
+    public function purposes()
+    {
+        return $this->belongsToMany('App\Purpose');
     }
 }

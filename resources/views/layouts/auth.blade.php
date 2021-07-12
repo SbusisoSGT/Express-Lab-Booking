@@ -7,11 +7,11 @@
 @section('main-content')
 	<div class="container-div">
 		<div class="background-image">
-            <img src="{{ asset('images/IMG_0981.PNG') }}">
+            @yield('image-background')
 		</div>
 		<div class="form-container">
 			<div class="logo">
-				<a href="/lab-booking/dashboard/"><img src="{{ asset('images/SMU-logo.png') }}"></a>
+				<a href="/lab-booking"><img src="{{ asset('images/SMU-logo.png') }}"></a>
 			</div>
 			<div class="form">
                 @yield('form')

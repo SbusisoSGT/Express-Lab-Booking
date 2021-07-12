@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    protected $table = 'bookings';
-
     protected $fillable = [
-        'booking_date', 'start_time', 'end_time', 'purpose', 'module', 'lab_id'
+        'date', 'start_time', 'end_time', 'purpose', 'module', 'lab_id'
     ];
 
-    public function labs()
+    public function lab()
     {
         return $this->belongsTo('App\Lab');
     }

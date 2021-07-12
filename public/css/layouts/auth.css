@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: space-evenly;
   width: 40%;
+  padding: 0 1rem;
   height: 100vh;
 }
 
@@ -31,8 +32,8 @@
 }
 
 .container-div .form-container .logo img {
-  height: 13.3rem;
-  width: 20rem;
+  height: 11rem;
+  width: 17rem;
 }
 
 .container-div .form-container .form form {
@@ -40,11 +41,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 }
 
-.container-div .form-container .form form .form-group svg {
-  margin-top: 0.2rem;
-  font-size: 1.8rem;
+.container-div .form-container .form form .form-group svg,
+.container-div .form-container .form form .form-group img {
+  height: 2rem;
 }
 
 .container-div .form-container .form form .form-group .input {

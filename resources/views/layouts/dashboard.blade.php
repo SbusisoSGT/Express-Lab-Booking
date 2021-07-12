@@ -1,19 +1,18 @@
 @extends('layouts.main')
 
-@section('title', 'About')
-
 @section('page-seo')
     @include('inc._basic-seo')
 @endsection
 
 @section('page-includes-styles')
-    
+    @yield('styles')
+    <link rel="stylesheet" href="{{asset('css/layouts/dashboard.css')}}">
 @endsection
 
 @section('page-includes-scripts')
-    
+    @yield('scripts')
+    <script src="{{asset('js/layouts/dashboard.js')}}"></script>
 @endsection
-
 
 @section('main-content')
     <div class="container-fluid">
@@ -38,11 +37,13 @@
         </div>
         <div class="tab-2">
             <nav class="nav">
-                <i class="material-icons" id="menu-icon">menu</i> 
-                <span class="logo"><a href="/lab-booking/dashboard/">Lab Booking</a></span>
+                <div class="nav-logo-container"> 
+                    <img src="{{asset('images/icons/menu-alt-03.svg')}}" id="menu-icon" onclick="showSideMenu()" alt="Menu icon">
+                    <span class="logo"><a href="/lab-booking/">Express</a></span>
+                </div>
                 <div class="profile">
                     <span class="profile-options"></span>
-                    <img alt="logo" class="profile-pic" src="{{ asset('images/blank-profile.png') }}">
+                    <img alt="profile" class="profile-pic" src="{{ asset('images/blank-profile.png') }}">
                     @auth
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -61,14 +62,12 @@
         </div>
     </div>
     <div class="dashboard-content-container">
+        <div class="date-container">
+            <span class="date">{{date('D, d M Y')}}</span>
+        </div>
         @yield('dashboard-content')
     </div>
     <footer class="footer">
         @include('inc._footer')
     </footer>
-@endsection
-
-
-@section('footer')
-    
 @endsection

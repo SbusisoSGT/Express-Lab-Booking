@@ -21,74 +21,26 @@ class BookingController extends Controller
         return view('lab-booking.create');
     }
 
-    public function dashboard()
+    public function index(Request $request)
     {
         $periods = $this->slots("07:45", "16:55");
-        $date = '2020-04-24'; 
+        $date = date('d-m-Y'); 
         //Bookings of all labs for specific date
         $bookings = $this->dayBookings($date);
-
-		//$labs = Lab::orderBy('number_of_computers', 'DESC')
-			//		 ->paginate(5);
 					 
         $labs = DB::table('labs')
                     ->select('*')
                     ->orderBy('number_of_computers', 'DESC')
                     ->paginate(5);
 
-        return view('lab-booking.dashboard')
-                ->with([
-                    'labs' => $labs,
-                    'periods' => $periods,
-                    'bookings' => $bookings,
-                    'date' => $date
-                ]);
-    }
-
-    public function filter(Request $request)
-    {
-        if($request->input('date') != 'any'){
-            $bookings = $this->dayBookings($request->input('date'));
-        }
-        $bookings = DB::table('bookings')
-                        ->select()
-                        ->get();
-
-        return view('lab-booking.dashboard')
-                ->with([
-                    'labs' => $labs,
-                    'periods' => $periods,
-                    'bookings' => $bookings,
-                    'date' => $date
-                ]);
-    }
-
-    public function index()
-    {
-        $date = date('Y-m-d'); 
-        //Bookings of all labs for specific date
-        $bookings = $this->dayBookings($date);
-        $labs = DB::table('labs')
-                    ->select('*')
-                    ->orderBy('number_of_computers', 'DESC')
-                    ->take(11)
-                    ->get();
-
-        $periods = $this->slots("07:45", "16:55");
-        
         return view('lab-booking.index')
-               ->with([
-                   'bookings' => $bookings,
-                   'labs' => $labs,
-                   'periods' => $periods,
-                   'date' => $date
+                ->with([
+                    'labs' => $labs,
+                    'periods' => $periods,
+                    'bookings' => $bookings,
+                    'date' => $date
                 ]);
     }
-
-    // public function validate(Request $request)
-    // {
-    //     $this->validate();
-    // }
 
     public function store(Request $request)
     {

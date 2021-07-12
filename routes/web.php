@@ -16,7 +16,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Auth::routes();
 
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function(){
@@ -32,7 +31,6 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function(){
 
 //Lab booking Routes
 Route::get('/lab-booking', 'BookingController@index');
-Route::get('/lab-booking/dashboard/', 'BookingController@dashboard');
 Route::get('/lab-booking/dashboard/filter/{building?}/{purpose}/{computers}/{date}/', 'BookingController@filter');
 Route::get('/lab-booking/create/', 'BookingController@create');
 Route::post('/lab-booking', 'BookingController@store');
@@ -55,33 +53,5 @@ Route::group(['middleware' => 'auth'], function(){
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/lab-booking/admin/', 'AdminController@index')->middleware('can:manage-users');
 });
-
-
-// Route::group(['prefix' => 'api', 'namespace' => 'Api', function(){
-//     Route::resource('building', 'BuildingsController');
-//     Route::resource('labs', 'LabsController')->excerpt('create', 'edit');
-// }]);
-
-//Lecturer registration routes
-
-Route::get('/lecturer/register', 'LecturerController@create');
-Route::post('/lecturer/register', 'LecturerController@store');
-
-// Route::get('/lecturer', 'LecturerController@index');
-
-// Route::post('/register', 'RegisterController@create');
-Route::get('/lecturer/{id}', 'LecturerController@show');
-
-Route::get('/lecturer/login', function(){
-    return "Hey do something please";
-});
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::resource('lecturer', 'LecturerController');
-
-// Route::resource('lab-booking/account', 'AccountController')
-//         ->middleware('auth');
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

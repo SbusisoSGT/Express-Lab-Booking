@@ -15,9 +15,8 @@ class CreateLabsTable extends Migration
     {
         Schema::create('labs', function (Blueprint $table) {
             $table->id();
-            $table->string('lab_name');
+            $table->string('name');
             $table->integer('number_of_computers');
-            $table->string('purpose');
             $table->bigInteger('building_id')->unsigned();
             $table->foreign('building_id')
                   ->references('id')

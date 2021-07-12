@@ -43,7 +43,7 @@ trait MakesABooking
 	    for($x = 0; $x < $count; $x++)
         {
 		    array_push($bookings, ["lab_id" => $input['lab_id'],
-			 		                    "booking_date" => $input['date'],
+			 		                    "date" => $input['date'],
 			 		                    "start_time" => substr($slots[$x],0,5),
 					                    "end_time" => substr($slots[$x],6,5),
 			 		                    "purpose" => $input['purpose'],
@@ -65,7 +65,7 @@ trait MakesABooking
 		while($x < $count && $available == true)
 		{
         	$check = Booking::where('lab_id', $bookings[$x]['lab_id'])
-                     	 ->where('booking_date', $bookings[$x]['booking_date'])
+                     	 ->where('date', $bookings[$x]['date'])
                      	 ->where('start_time', $bookings[$x]['start_time'])
 						 ->get();
 						 
@@ -105,7 +105,7 @@ trait MakesABooking
 	
 	public function dayBookings($date)
 	{
-		$bookings = Booking::where('booking_date', $date)->get();
+		$bookings = Booking::where('date', $date)->get();
 						
 		return $bookings;
 	}
@@ -115,10 +115,10 @@ trait MakesABooking
 	{
 		$weekBookings = DB::table('booking')
 							->select('*')
-							->where('booking_date', '>', $data['start_date'])
-							->where('booking_date', '<', $data['end_date'])
+							->where('date', '>', $data['start_date'])
+							->where('date', '<', $data['end_date'])
 							->where('lab_id', $data['lab_id'])
-							->orderBy('booking_date', 'ASC') 
+							->orderBy('date', 'ASC') 
 							->orderBy('start_time', 'ASC')
 							->get();
 

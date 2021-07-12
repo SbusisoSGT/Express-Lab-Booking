@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Lab;
+
 class LabsTableSeeder extends Seeder
 {
     /**
@@ -12,170 +13,151 @@ class LabsTableSeeder extends Seeder
     public function run()
     {
 
-        Lab::create(
-            ['lab_name' => 'Computer Science',
-             'number_of_computers' => 30,
-             'purpose' => 'Teaching/ Practicals',
-             'building_id' => 1             
-            ]
-        );
-        Lab::create(
-            ['lab_name' => 'English',
-             'number_of_computers' => 33,
-             'purpose' => 'Teaching/ Practicals',
-             'building_id' => 1             
-            ]
-        );
-        Lab::create(
-            ['lab_name' => 'CBE',
-             'number_of_computers' => 43,
-             'purpose' => 'Teaching/ General Use',
-             'building_id' => 1             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Computer Science';
+        $lab->number_of_computers = 30;
+        $lab->building_id = 1;
+        $lab->save();
+        $lab->purposes()->attach([2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'E-learning Center',
-             'number_of_computers' => 89,
-             'purpose' => 'Teaching',
-             'building_id' => 1             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'English';
+        $lab->number_of_computers = 33;
+        $lab->building_id =  1;
+        $lab->save();
+        $lab->purposes()->attach([2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'Small E-learning Center',
-             'number_of_computers' => 22,
-             'purpose' => 'Teaching',
-             'building_id' => 1             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'CBE';
+        $lab->number_of_computers =  43;
+        $lab->building_id = 1;
+        $lab->save();
+        $lab->purposes()->attach([1, 2]);
 
-        Lab::create(
-            ['lab_name' => 'Chemistry',
-             'number_of_computers' => 10,
-             'purpose' => 'Postgraduate',
-             'building_id' => 1             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'E-learning Center';
+        $lab->number_of_computers = 89;
+        $lab->building_id =  1;    
+        $lab->save();         
+        $lab->purposes()->attach(1);
 
-        Lab::create(
-            ['lab_name' => 'Study Hall',
-             'number_of_computers' => 94,
-             'purpose' => 'Teaching/ Practicals/ General Use',
-             'building_id' => 2             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Small E-learning Center';
+        $lab->number_of_computers = 22;
+        $lab->building_id =  1; 
+        $lab->save();            
+        $lab->purposes()->attach(2);
 
-        Lab::create(
-            ['lab_name' => 'BMS-301',
-             'number_of_computers' => 80,
-             'purpose' => 'Teaching/ Practicals/ General Use',
-             'building_id' => 2             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Chemistry';
+        $lab->number_of_computers = 10;  
+        $lab->building_id =  1; 
+        $lab->save();          
+        $lab->purposes()->attach(6);
 
-        Lab::create(
-            ['lab_name' => 'BMS-303',
-             'number_of_computers' => 30,
-             'purpose' => 'Teaching/ Practicals/ General Use',
-             'building_id' => 2             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Study Hall';
+        $lab->number_of_computers = 94;
+        $lab->building_id =  2;   
+        $lab->save();  
+        $lab->purposes()->attach([1, 2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'Physiology',
-             'number_of_computers' => 20,
-             'purpose' => 'Teaching/ Practicals',
-             'building_id' => 2             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'BMS-301';
+        $lab->number_of_computers =  80;
+        $lab->building_id =  2;
+        $lab->save();               
+        $lab->purposes()->attach([1, 2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'Pharmacy',
-             'number_of_computers' => 64,
-             'purpose' => 'Teaching/ Practicals',
-             'building_id' => 2             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'BMS-303';
+        $lab->number_of_computers = 30;
+        $lab->building_id =  2;  
+        $lab->save();             
+        $lab->purposes()->attach([1, 2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'Physics',
-             'number_of_computers' => 0,
-             'purpose' => 'Practicals',
-             'building_id' => 2             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Physiology';
+        $lab->number_of_computers = 20;
+        $lab->building_id =  2;    
+        $lab->save();           
+        $lab->purposes()->attach([2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'Main Hall',
-             'number_of_computers' => 100,
-             'purpose' => 'General Use',
-             'building_id' => 3             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Pharmacy';
+        $lab->number_of_computers = 64;
+        $lab->building_id =  2; 
+        $lab->save();              
+        $lab->purposes()->attach([2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'MTN Multimedia Center',
-             'number_of_computers' => 42,
-             'purpose' => 'Teaching/ Practicals',
-             'building_id' => 3             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Physics';
+        $lab->number_of_computers = 0;
+        $lab->building_id =  2;  
+        $lab->save();             
+        $lab->purposes()->attach(3);
 
-        Lab::create(
-            ['lab_name' => 'Postgraduate',
-             'number_of_computers' => 17,
-             'purpose' => 'General Use/ Research',
-             'building_id' => 3             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Main Hall';
+        $lab->number_of_computers = 100;
+        $lab->building_id =  3;   
+        $lab->save();            
+        $lab->purposes()->attach(1);
 
-        Lab::create(
-            ['lab_name' => 'Glass-cabinet',
-             'number_of_computers' => 24,
-             'purpose' => 'General Use',
-             'building_id' => 5             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'MTN Multimedia Center';
+        $lab->number_of_computers = 42;
+        $lab->building_id =  3;    
+        $lab->save();           
+        $lab->purposes()->attach([2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'E-Learning',
-             'number_of_computers' => 30,
-             'purpose' => 'Training/ General Use',
-             'building_id' => 4             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Postgraduate';
+        $lab->number_of_computers = 17;
+        $lab->building_id = 3;     
+        $lab->save();          
+        $lab->purposes()->attach([1, 7]);
 
-        Lab::create(
-            ['lab_name' => 'Res-2B',
-             'number_of_computers' => 108,
-             'purpose' => 'Teaching/ Practicals/ General Use',
-             'building_id' => 6             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'E-Learning';
+        $lab->number_of_computers = 30;
+        $lab->building_id =  4;     
+        $lab->save();          
+        $lab->purposes()->attach([1, 5]);
+        
+        $lab = new Lab();
+        $lab->name = 'Glass-cabinet';
+        $lab->number_of_computers = 24;
+        $lab->building_id =  5;   
+        $lab->save();            
+        $lab->purposes()->attach(1);
 
-        Lab::create(
-            ['lab_name' => 'Statistics',
-             'number_of_computers' => 17,
-             'purpose' => 'Teaching/ Practicals',
-             'building_id' => 7             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Res-2B';
+        $lab->number_of_computers = 108;
+        $lab->building_id =  6;    
+        $lab->save();           
+        $lab->purposes()->attach([1, 2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'South Point-Lab 1',
-             'number_of_computers' => 20,
-             'purpose' => 'Training/ General Use',
-             'building_id' => 8             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'Statistics';
+        $lab->number_of_computers = 17;
+        $lab->building_id =  7;    
+        $lab->save();           
+        $lab->purposes()->attach([2, 3]);
 
-        Lab::create(
-            ['lab_name' => 'South Point-Lab 2',
-             'number_of_computers' => 26,
-             'purpose' => 'General Use',
-             'building_id' => 8             
-            ]
-        );
+        $lab = new Lab();
+        $lab->name = 'South Point-Lab 1';
+        $lab->number_of_computers = 20;
+        $lab->building_id =  8;    
+        $lab->save();           
+        $lab->purposes()->attach([1, 5]);
+
+        $lab = new Lab();
+        $lab->name = 'South Point-Lab 2';
+        $lab->number_of_computers = 26;
+        $lab->building_id =  8;   
+        $lab->save();            
+        $lab->purposes()->attach(1);
     }
 }

@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Lab Booking | Book</title>
-	<link href="https://fonts.googleapis.com/css?family=Merienda|Orbitron|Courgette|Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+@extends('layouts.dashboard')
+
+@section('title', 'Book A Lab')
+
+@section('styles')
 	<link rel="stylesheet" href="{{ asset('css/lab-booking/create.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/layouts/main.css') }}">
-</head>
-<body>
+@endsection
+
+@section('scripts')
+	<script src="{{asset('js/lab-booking/create.js')}}"></script>
+@endsection
+
+@section('dashboard-content')
 	@if (session('unsuccessful'))
 		<div class="timetable-pop-up">
 			<button class="btn btn-dark pull-left" id="close-btn"><strong>X</strong></button>
@@ -43,13 +45,7 @@
 			</div>
 		</div>
 	@endif
-	<div class="overlay">
-	</div>
 	<div class="container">
-		<div class="row">
-			<h2 class="text-center"><span id="express"><a href="/lab-booking/create/">Lab Booking</a></span></h2>
-		</div><br/>
-
 		@if(session('successful'))
 			<h4 class="alert alert-success">{{session('successful')}}</h4>
 		@endif
@@ -64,9 +60,9 @@
 						<strong>
 							@for ($i = 0; $i < count(session('otherAvailLabs')); $i++)
 								@if ($i ==  count(session('otherAvailLabs')) - 1)
-									{{" and ".session('otherAvailLabs')[$i]->lab_name.". "}}
+									{{" and ".session('otherAvailLabs')[$i]->name.". "}}
 								@else 
-									{{session('otherAvailLabs')[$i]->lab_name.", "}}
+									{{session('otherAvailLabs')[$i]->name.", "}}
 								@endif
 							@endfor
 						</strong>
@@ -135,36 +131,4 @@
 			</form>
 		</div>
 	</div>
-</body>
-</html>
-	
-<script>
-	$(document).ready(function(){
-		var url = 'http://127.0.0.1:8000/api/labs/';
-		$.getJSON(url, function(data){
-			var html = '<option value>--Select Option--</option>';
-			$.each(data, function(entryIndex, entry){
-				html += "<option value='"+ entry.lab_id +"'>" + entry.lab_name + " - " + entry.number_of_computers + " computers " + "</option>";
-			});
-
-			$("#labs").html(html);
-
-			$('#close-btn').click(function(){
-				$('.timetable-pop-up').hide();
-				$('.overlay').hide();
-			});
-
-			$('.overlay').click(function(){
-				$('.timetable-pop-up').hide();
-				$('.overlay').hide();
-			});
-
-			$('.show-timetable').click(function(){
-				$('.overlay').show();
-				$('.timetable-pop-up').show();
-			});
-
-		});
-	});
-	
-</script>
+@endsection

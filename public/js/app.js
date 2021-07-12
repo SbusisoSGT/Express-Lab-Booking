@@ -37472,10 +37472,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/sass/lab-booking/dashboard.scss":
-/*!***************************************************!*\
-  !*** ./resources/sass/lab-booking/dashboard.scss ***!
-  \***************************************************/
+/***/ "./resources/sass/lab-booking/index.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/lab-booking/index.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37487,6 +37487,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!******************************************!*\
   !*** ./resources/sass/layouts/auth.scss ***!
   \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/layouts/dashboard.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/layouts/dashboard.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37506,19 +37517,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/layouts/main.scss ./resources/sass/layouts/auth.scss ./resources/sass/lab-booking/account/edit.scss ./resources/sass/lab-booking/account/show.scss ./resources/sass/lab-booking/create.scss ./resources/sass/lab-booking/dashboard.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/layouts/main.scss ./resources/sass/layouts/auth.scss ./resources/sass/layouts/dashboard.scss ./resources/sass/lab-booking/account/edit.scss ./resources/sass/lab-booking/account/show.scss ./resources/sass/lab-booking/create.scss ./resources/sass/lab-booking/index.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\Express\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\layouts\main.scss */"./resources/sass/layouts/main.scss");
 __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\layouts\auth.scss */"./resources/sass/layouts/auth.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\layouts\dashboard.scss */"./resources/sass/layouts/dashboard.scss");
 __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\lab-booking\account\edit.scss */"./resources/sass/lab-booking/account/edit.scss");
 __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\lab-booking\account\show.scss */"./resources/sass/lab-booking/account/show.scss");
 __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\lab-booking\create.scss */"./resources/sass/lab-booking/create.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\lab-booking\dashboard.scss */"./resources/sass/lab-booking/dashboard.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Express\resources\sass\lab-booking\index.scss */"./resources/sass/lab-booking/index.scss");
 
 
 /***/ })

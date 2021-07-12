@@ -1,0 +1,151 @@
+.container-fluid{
+		padding: 0;
+}
+	
+.side-bar-menu{
+	position: absolute;
+	z-index: 2;
+	width: 17rem;
+	background: #CFCFCF;
+	margin: 0;
+	border-radius: 3px;
+	padding: 8vh 1.4rem;
+	overflow-y: auto;
+	display: none;
+
+	.welcome-panel{
+		padding: 1.4rem .7rem 2rem 1.4rem;
+
+		.name{
+			font-family: 'Courgette', cursive;
+			font-size: 3.0rem;
+		}
+	}
+	
+	.menu-panel{
+		padding: 1.4rem;
+		height: 14rem;
+	}
+
+	.admin-panel{
+		padding: 1.4rem;
+	}
+
+	.admin-panel a, .welcome-panel a, .menu-panel a{
+		color: #000;
+	
+		& a:hover{
+			text-decoration: underline;
+		}
+	}
+}	
+
+
+.tab-2{
+	width: 100%;
+	background: #f8f8f8;
+	float: right;
+
+	.nav{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		height: 4rem;
+		background-color: #FFF;
+		box-shadow: 0px 11px 5px 0px #C8C8C8;
+		padding: .3rem 0 0 1rem;
+	
+		.nav-logo-container{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			img{
+				height: 2.5rem;
+				margin-left: .8rem;
+				cursor: pointer;
+	
+				&:hover{
+					opacity: .8;
+				}
+			}	
+			
+			.logo{
+				font-family: 'Orbitron', sans-serif;
+				font-size: 1.9rem;
+				margin-left: .9rem;
+
+				a{
+					color: #2196F3 !important;
+
+					&:hover{
+						color: #04477e;
+					}
+				}
+			}
+		}
+	
+		.profile{
+			display: flex;
+			margin-right: 1.2rem;
+			flex-direction: row-reverse;
+			align-items: center;
+	
+			.profile-pic{
+				height: 3rem;
+				width: 3rem;
+				border-radius: 7rem;
+				margin-left: .8rem;
+				cursor: pointer;
+			}
+		
+			.profile-options{
+				font-weight: bolder;
+				transform: rotate(90deg);
+			}
+	
+			.full-name{
+				font-size: 1.0rem;
+				font-weight: bold;
+				color: #007BFF;
+				
+			}
+		}
+	}
+}
+
+.dashboard-content-container{
+	.date-container{
+		display: flex;
+		padding: 2.5rem;
+		padding-bottom: 0;
+		width: 100%;
+	}
+	
+	.date{
+		font-weight: normal;
+		font-size: 1.5rem;
+	}
+}
+	
+@media (max-width: 774px){
+	// .side-bar-menu{
+	// 	width: 5%;
+	// 	padding: 0px;
+	// 	display: none;
+	// }
+
+	// .menu, .welcome{
+	// 	display: none;
+	// }
+
+	// .tab-2{
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	height: 635px;
+	// 	background: #f8f8f8;
+	// 	float: right;
+	// 	overflow: scroll;
+	// }
+}
+

@@ -1,0 +1,130 @@
+.container-fluid {
+  padding: 0;
+}
+
+.side-bar-menu {
+  position: absolute;
+  z-index: 2;
+  width: 17rem;
+  background: #CFCFCF;
+  margin: 0;
+  border-radius: 3px;
+  padding: 8vh 1.4rem;
+  overflow-y: auto;
+  display: none;
+}
+
+.side-bar-menu .welcome-panel {
+  padding: 1.4rem 0.7rem 2rem 1.4rem;
+}
+
+.side-bar-menu .welcome-panel .name {
+  font-family: "Courgette", cursive;
+  font-size: 3rem;
+}
+
+.side-bar-menu .menu-panel {
+  padding: 1.4rem;
+  height: 14rem;
+}
+
+.side-bar-menu .admin-panel {
+  padding: 1.4rem;
+}
+
+.side-bar-menu .admin-panel a,
+.side-bar-menu .welcome-panel a,
+.side-bar-menu .menu-panel a {
+  color: #000;
+}
+
+.side-bar-menu .admin-panel a a:hover,
+.side-bar-menu .welcome-panel a a:hover,
+.side-bar-menu .menu-panel a a:hover {
+  text-decoration: underline;
+}
+
+.tab-2 {
+  width: 100%;
+  background: #f8f8f8;
+  float: right;
+}
+
+.tab-2 .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 4rem;
+  background-color: #FFF;
+  box-shadow: 0px 11px 5px 0px #C8C8C8;
+  padding: 0.3rem 0 0 1rem;
+}
+
+.tab-2 .nav .nav-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tab-2 .nav .nav-logo-container img {
+  height: 2.5rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+
+.tab-2 .nav .nav-logo-container img:hover {
+  opacity: 0.8;
+}
+
+.tab-2 .nav .nav-logo-container .logo {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.9rem;
+  margin-left: 0.9rem;
+}
+
+.tab-2 .nav .nav-logo-container .logo a {
+  color: #2196F3 !important;
+}
+
+.tab-2 .nav .nav-logo-container .logo a:hover {
+  color: #04477e;
+}
+
+.tab-2 .nav .profile {
+  display: flex;
+  margin-right: 1.2rem;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.tab-2 .nav .profile .profile-pic {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 7rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+
+.tab-2 .nav .profile .profile-options {
+  font-weight: bolder;
+  transform: rotate(90deg);
+}
+
+.tab-2 .nav .profile .full-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.dashboard-content-container .date-container {
+  display: flex;
+  padding: 2.5rem;
+  padding-bottom: 0;
+  width: 100%;
+}
+
+.dashboard-content-container .date {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+

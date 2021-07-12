@@ -11,7 +11,7 @@ class Role extends Model
      *
      * @var array
      */
-    protected $fillable = ['role'];
+    protected $fillable = ['name'];
 
     public $timestamps = false;
 

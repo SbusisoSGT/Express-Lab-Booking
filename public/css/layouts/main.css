@@ -1,4 +1,12 @@
-*{
+@font-face {
+    font-family: Orbitron;
+    src: url(/fonts/Orbitron-VariableFont_wght.ttf?c641d3e90c64fcb82f8f5e2ac5317e98);
+}
+
+@font-face {
+    font-family: Courgette;
+    src: url(/fonts/Courgette-Regular.ttf?59c3685a73f0f1b7c302dd2d6dabd628);
+}*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,29 +36,29 @@ a{
 
 /*          Root Styling            */
 
-.section-header {
-  font-size: 2.4rem;
-  font-weight: 250;
-  color: var(--dark-shade);
+.loader {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  background-color: #FFF;
+  display: none;
 }
 
-.lg-btn {
-  background-color: var(--dark-shade);
-  color: var(--bg-color);
-  border: none;
-  transition: 0.3s ease;
-}
-
-.lg-btn:hover {
-  background-color: #332321;
+.overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: none;
 }
 
 .copyright {
   display: flex;
   flex-flow: row;
   justify-content: center;
-  padding: 1rem 0;
-  margin-top: 1.9rem;
+  padding: 0.5rem 0;
   align-self: center;
 }
 
@@ -59,6 +67,10 @@ a{
   align-items: center;
   flex-direction: column;
   font-size: 1rem;
+}
+
+.copyright p span {
+  text-align: center;
 }
 
 .copyright p #ht {
