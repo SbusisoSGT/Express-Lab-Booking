@@ -28,7 +28,7 @@
                 <a href="/lab-booking/account/">Account</a><br/><br/>
                 <a href="/lab-booking/mybookings/">My Bookings</a><br/><br/>
                 <a href="/lab-booking/availability/">Lab Availability</a><br/><br/>
-                <a href="/lab-booking/create/">Book a Lab</a><br/><br/>
+                <a href="/lab-booking/book/">Book a Lab</a><br/><br/>
                 <a></a>
             </div><hr/>
             <div class="admin-panel">

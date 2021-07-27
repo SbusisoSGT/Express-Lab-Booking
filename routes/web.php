@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json(session('data'));
 });
 
 Auth::routes();
@@ -31,12 +31,9 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function(){
 
 //Lab booking Routes
 Route::get('/lab-booking', 'BookingController@index');
-Route::get('/lab-booking/dashboard/filter/{building?}/{purpose}/{computers}/{date}/', 'BookingController@filter');
-Route::get('/lab-booking/create/', 'BookingController@create');
-Route::post('/lab-booking', 'BookingController@store');
+Route::get('/lab-booking/book', 'BookingController@create');
+Route::post('/lab-booking/book', 'BookingController@store');
 Route::get('lab-booking/week-bookings', 'BookingController@weekBookings');
-Route::get('lab-booking/anything', 'BookingController@anything');
-Route::get('/slots/{start_time}/{end_time}/', 'BookingController@slots');
 Route::get('/booking/{lab_id}/{date}/{start_time}/{end_time}/{purpose}/{module}/', 'BookingController@bookings');
 
 //Account Routes

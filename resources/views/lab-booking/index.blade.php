@@ -13,7 +13,7 @@
 @section('dashboard-content')
 	<div class="container">
 		<div class="row-btn">		
-			<a href="/lab-booking/create"><button class="view-avail-btn">Book a Lab</button></a>
+			<a href="/lab-booking/book"><button class="view-avail-btn">Book a Lab</button></a>
 			<a href="/lab-booking/availability"><button class="book-btn">View Availability</button></a>
 		</div>
 	</div>
@@ -72,14 +72,17 @@
 			<div class="form-group">
 				<form method="GET" action="">
 					<select name="building_id" class="form-control filter-select" id="buildings"></select>
-					<select name="purpose" class="form-control filter-select">
+					<select name="purpose_id" class="form-control filter-select">
 						<option value="any">Any Purpose</option>
-						<option>Exam</option>
-						<option>Test</option>
-						<option>Teaching</option>
-						<option>Practical</option>
+						<option value="1">General Use</option>
+						<option value="2">Teaching</option>
+						<option value="3">Practical</option>
+						<option value="4">Exam</option>
+						<option value="5">Training</option>
+						<option value="6">Postgraduate</option>
+						<option value="7">Research</option>
 					</select>
-					<select name="computers" class="form-control filter-select">
+					<select name="num_of_computers" class="form-control filter-select">
 						<option value="any">Any Number of computers</option>
 						<option value="0-29">0 - 29</option>
 						<option value="30-59">30 - 59</option>
@@ -102,16 +105,16 @@
 					</tr>
 				</thead>
 				<tbody>
-                    @for ($x = 0; $x < count($periods); $x++)
+                    @for ($x = 0; $x < count(slots()); $x++)
                         <tr>
-                            <td>{{$periods[$x]}}</td>
+                            <td>{{slots()[$x]}}</td>
 
                             @for ($y = 0; $y < count($labs); $y++)
-                        	    {{-- @if (!empty($booking = searchBooking($bookings, substr($periods[$x],0,5), $labs[$y]->id, $date)))
+                        	    @if (!empty($booking = searchBooking($bookings, substr(slots()[$x],0,5), $labs[$y]->id, $date)))
                     	        	<td>{{$booking->module}}</td>
-                                @else --}}
+                                @else
                                 <td></td>
-                                {{-- @endif --}}
+                                @endif
                             @endfor
                         </tr>
                     @endfor	

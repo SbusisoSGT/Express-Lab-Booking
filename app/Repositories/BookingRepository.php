@@ -4,21 +4,26 @@ namespace App\Repositories;
 
 use App\Booking;
 
-class BookingsRepository implements Repository
+class BookingRepository implements Repository
 {
     /**
-     * Create an instance of the model with the request data
+     * Create multilple instances of booking and store them in DB
      * 
-     * @param $request
-     * @return Booking $booking
+     * @param $bookings
+     * @return void
      */
-    public function create($request)
+    public function create($bookings)
     {
-        $booking = new Booking();
-        
-        
-        $booking->save();
-        
-        return $booking;
+        for($x = 0; $x < count($bookings); $x++)
+        {
+            $BookingInstance = new Booking;
+            $BookingInstance->date = $bookings[$x]['date'];
+            $BookingInstance->start_time = $bookings[$x]['start_time'];
+            $BookingInstance->end_time = $bookings[$x]['end_time'];
+            $BookingInstance->module = $bookings[$x]['module'];
+            $BookingInstance->purpose = $bookings[$x]['purpose'];
+            $BookingInstance->lab_id = $bookings[$x]['lab_id'];
+            $BookingInstance->save();
+        }
     }
 }

@@ -75,7 +75,7 @@
 		@endif
 
 			<div class="form">
-            <form action="/lab-booking/" method="POST"><br/><br/>
+            <form action="/lab-booking/book" method="POST"><br/><br/>
                 @csrf
 
 				<h3>Enter Info to book a lab</h3><br/>
@@ -94,7 +94,7 @@
 						<option>Test</option>
 					</select><br/><br/>
 				<label for="date">Date</label>
-					<input type="date" class="form-control" name="booking_date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('2020-12-31')); ?>" required><br/>
+					<input type="date" class="form-control" name="date" min="<?php echo date('Y-m-d'); ?>" required><br/>
 				<label for="start">Start Time</label>
 					<select class="custom-select" name="start_time" required>
 						<option value>--Select Option--</option>

@@ -12,45 +12,37 @@ use App\User;
 
 class AccountController extends Controller
 {
+    /**
+     * Return account overview page
+     * 
+     * @return Illuminate\Http\Response
+     */
     public function index()
     {
-        $role = DB::table('roles')
-                    ->select('role')
-                    ->where('id', auth()->user()->role_id)
-                    ->first();
-
-        return view('lab-booking.account.show')
-                ->with(['role' => $role]);
+        return view('lab-booking.account.show');
     }
 
-    public function show($account)
-    {
-        
-    }
-
+    /**
+     * Return account edit page
+     * 
+     * @return Illuminate\Http\Response
+     */
     public function edit()
-    {   
-        $role = DB::table('roles')
-                    ->select('role')
-                    ->where('id', auth()->user()->role_id)
-                    ->first();
-
-        return view('lab-booking.account.edit')
-                ->with(['role' => $role]);
+    {
+        return view('lab-booking.account.edit');
     }
 
+    /**
+     * Process edit account form
+     * 
+     * @param Request $request
+     * @return Illuminate\Http\Response
+     */
     public function update(Request $request)
     {
         $user = auth()->user();
         $user->update($request->all());
 
-        return view('lab-booking.account.edit')
-                ->with('message', 'Update was successful');
-
+        return redirect()->back();
     }
-
-    public function create()
-    {
-        return view('lab-booking.account.create');
-    } 
 }

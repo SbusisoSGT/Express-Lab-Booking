@@ -25,7 +25,7 @@
 				<input type="text" class="form-control" value="Computer Science" disabled><br/>
 
                 <label for="user"><b>User</b></label><br/>
-                <input type="text" class="form-control" value="{{$role->role}}" disabled><br/>
+                <input type="text" class="form-control" value="{{auth()->user()->role->name}}" disabled><br/>
 
                 <label for="password"><b>Password</b></label><br/>
 				<input type="password" class="form-control"><br/>

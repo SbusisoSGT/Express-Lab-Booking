@@ -6,6 +6,7 @@
 	.background-image{
 		width: 60%;
 		height: 100%;
+		position: fixed;
 
 		img{
 			object-fit: cover;
@@ -19,9 +20,12 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-evenly;
+		position: absolute;
+		right: 0;
 		width: 40%;
 		padding: 0 1rem;
-		height: 100vh;
+		height: 100%;
+		overflow: auto;
 
 		.logo{
 			padding-top: 1rem;
@@ -41,6 +45,13 @@
 				justify-content: center;
 				align-items: center;
 				padding: 2rem 0;
+
+				.form-alert-response-container
+				{
+					span{
+						margin-top: .5rem;
+					}
+				}
 
 				.form-group{
 					svg,img{
@@ -83,6 +94,7 @@
 					flex-direction: row;
 					justify-content: space-between;
 					width: 28vmax;
+					margin-top: .3rem;
 
 					.register, .forgot{
 						color: #000;

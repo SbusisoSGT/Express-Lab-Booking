@@ -9,45 +9,25 @@ use App\Lab;
 
 trait MakesABooking
 {
-
-    protected function slots($start, $end)
-    {
-		$slots = array();
-		if($start == "13:00")
-			$current =  date("H:i", strtotime($start." +55minutes"));
-		else
-			$current =  date("H:i", strtotime($start." +40minutes"));
-
-		array_push($slots, $start."-".$current);	
-
-		while($current !== $end)
-		{
-			$start = date("H:i", strtotime($current." +5minutes"));
-
-			if($start == "13:00") 
-                        	$current = date("H:i", strtotime($start." +55minutes"));
-			else
-				$current = date("H:i", strtotime($start." +40minutes"));
-		
-			array_push($slots, $start."-".$current);
-		}
-		return $slots;
-    }
-
-    public function bookings(array $input) 
+	/**
+	 * Split a booking accroding to multiple periods
+	 * 
+	 * @param Request $request
+	 * @return $bookings
+	 */
+    public function bookings(Request $request) 
     {
         $bookings = [];
-	    $slots = $this->slots($input['start_time'], $input['end_time']);
-	    $count = count($slots);
+	    $slots = slots($request->input('start_time'), $request->input('end_time'));
 
-	    for($x = 0; $x < $count; $x++)
+	    for($x = 0; $x < count($slots); $x++)
         {
-		    array_push($bookings, ["lab_id" => $input['lab_id'],
-			 		                    "date" => $input['date'],
+		    array_push($bookings, ["lab_id" => $request->input('lab_id'),
+			 		                    "date" => $request->input('date'),
 			 		                    "start_time" => substr($slots[$x],0,5),
 					                    "end_time" => substr($slots[$x],6,5),
-			 		                    "purpose" => $input['purpose'],
-										"module" => $input['module']
+			 		                    "purpose" => $request->input('purpose'),
+										"module" => $request->input('module')
 									]
 			);
 
@@ -58,11 +38,10 @@ trait MakesABooking
 
     public function checkBookingAvail(array $bookings)
     {
-		$count = count($bookings);
 		$available = true;
 		$x = 0;
 
-		while($x < $count && $available == true)
+		while($x < count($bookings) && $available)
 		{
         	$check = Booking::where('lab_id', $bookings[$x]['lab_id'])
                      	 ->where('date', $bookings[$x]['date'])
@@ -78,9 +57,9 @@ trait MakesABooking
 		return $available;
 	}
 
-	public function checkOtherLabs(array $input)
+	public function checkOtherLabs(Request $request)
     {    
-        $bookings = $this->bookings($input);
+        $bookings = $this->bookings($request);
 
 		//Fetch all the Labs in the school, limit 10 
 		$labs = Lab::orderBy('number_of_computers', 'DESC')->get();
@@ -91,8 +70,8 @@ trait MakesABooking
         //Loop until you've found 4 other available labs or no other lab is available
         while(count($availableLabs) < 4 && $x < count($labs))
         {
-            $input['lab_id'] = $labs[$x]->lab_id;
-            $bookings = $this->bookings($input);
+            // $request->input('lab_id') = $labs[$x]->id;
+            $bookings = $this->bookings($request);
 
             //If Lab is available
             if($this->checkBookingAvail($bookings))
@@ -101,27 +80,5 @@ trait MakesABooking
         }
 
         return $availableLabs;   
-	}
-	
-	public function dayBookings($date)
-	{
-		$bookings = Booking::where('date', $date)->get();
-						
-		return $bookings;
-	}
-
-
-	public function weekBookings(array $data)
-	{
-		$weekBookings = DB::table('booking')
-							->select('*')
-							->where('date', '>', $data['start_date'])
-							->where('date', '<', $data['end_date'])
-							->where('lab_id', $data['lab_id'])
-							->orderBy('date', 'ASC') 
-							->orderBy('start_time', 'ASC')
-							->get();
-
-		return $weekBookings;
 	}
 }

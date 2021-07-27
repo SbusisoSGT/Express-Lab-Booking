@@ -6,6 +6,7 @@
   position: absolute;
   z-index: 2;
   width: 17rem;
+  height: 100%;
   background: #CFCFCF;
   margin: 0;
   border-radius: 3px;
